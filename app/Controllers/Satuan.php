@@ -43,7 +43,7 @@ $validation->setRules($rules, $messages);
 
 // cek validasi gagal
 if(!$validation->withRequest($this->request)->run()) {
-    return redirect()->back()->with('errors',$validation->getErrors());
+    return redirect()->to('/listSatuan')->with('errors',$validation->getErrors());
 }
         $data = ['nama_satuan'=> $this->request->getVar('nama_satuan')
     ];

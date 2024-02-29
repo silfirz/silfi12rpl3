@@ -79,7 +79,7 @@
 
                         <button type="submit" class="btn btn-danger"
                           onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" id="hapusSatuan"
-                          data-id="<?= $baris['id_satuan']; ?>"><i class="far fa-trash-alt"></i></button>
+                          data-id="<?= $baris['id_satuan']; ?>"><i class="bi bi-trash-fill"></i></button>
                       </form>
                         </td>
                       </tr>

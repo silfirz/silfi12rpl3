@@ -38,8 +38,6 @@ class Pengguna extends BaseController
                 );
 
             if(count($user) == 1) {
-                 
-
                 $dataSession = [
                     'id_pengguna' => $user[0]['id_pengguna'],
                     'nama_pengguna' => $user[0]['nama_pengguna'],
@@ -49,11 +47,11 @@ class Pengguna extends BaseController
                     'sudahkahLogin' => true
                 ];
                 session()->set($dataSession);
-                return redirect()->to('dashboard');
+                return redirect()->to('/dashboard');
             } else {
                 return redirect()->to('/')->with('pesan', 'Username atau Password Salah!! ');
             }
-        }
+        }  
     }
 
     public function logout()

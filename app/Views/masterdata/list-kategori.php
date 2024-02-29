@@ -1,6 +1,17 @@
 <?= $this->extend('layout/template');?>
 <?= $this->section('konten');?>
 
+<?php if (session()->has('errors')) : ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+<i class="bi bi-exclamation-triangle me-1"></i>
+  <?php foreach (session('errors') as $error) : ?>
+   
+      <?= $error; ?>
+    
+    <?php endforeach; ?>
+ </div>
+ <?php endif; ?>
+
 <div class="pagetitle">
       <h1>Data Kategori</h1>
       <nav>
@@ -68,9 +79,13 @@
                         <td><?=$baris['nama_kategori'];?></td>
                         <td>
                         <a href="<?=site_url('/edit-kategori/'.$baris['id_kategori']);?>" title="edit"><i class="bi bi-pencil-square"></i></a>
-                        <a button type="submit" class="btn btn-denger bi bi bi-trash-fill"
-                        id="hapusKategori" data-id="<?= $baris['id_kategori']; ?>" onClick="confirm('Yakin?);" ></a>
+                        <form action="<?= site_url('hapus-kategori/' . $baris['id_kategori']); ?>" method="post" class="d-inline">
                         <?= csrf_field() ?>
+
+                        <button type="submit" class="btn btn-danger"
+                          onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" id="hapusKategori"
+                          data-id="<?= $baris['id_kategori']; ?>"><i class="bi bi-trash-fill"></i></button>
+                      </form>
                     </tr>
                     <?php
                     }
