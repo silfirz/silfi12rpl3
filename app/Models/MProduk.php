@@ -75,7 +75,7 @@ class MProduk extends Model
         $queryproduk=$produk->query("CALL lihat_produk()")->getResult();
         return $queryproduk;
         }
-        
 
+        
 
 }

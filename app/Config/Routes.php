@@ -14,6 +14,8 @@ $routes->get('/logout', 'Pengguna::logout');
 $routes->get('/dashboard', 'Home::index',['filter'=>'autentifikasi']);
 
 
+
+
 //Master Data
 
 //Devisi
@@ -61,6 +63,10 @@ $routes->get('/pdf/generate', 'PdfController::generate',['filter'=>'autentifikas
 $routes->get('/transaksi-penjualan','Penjualan::index',['filter'=>'autentifikasi']);
 $routes->post('/transaksi-penjualan','Penjualan::simpanPenjualan',['filter'=>'autentifikasi']);
 $routes->get('/pembayaran','Penjualan::simpanPembayaran',['filter'=>'autentifikasi']);
+
+
+
+
 
 
 

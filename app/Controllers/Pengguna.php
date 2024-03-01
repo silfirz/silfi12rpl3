@@ -7,10 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Pengguna extends BaseController
 {
-    public function index()
-    {
-         //
-    }
+   
     public function TampilPengguna(){
         $data =[
            'listpengguna' => $this->pengguna->findAll()
@@ -111,4 +108,6 @@ class Pengguna extends BaseController
         $this->pengguna->where($syarat)->delete();
         return redirect()->to('/listPengguna')->with('pesan','Data Berhasil Di Hapus');
     }
+
+   
 }
